@@ -5,6 +5,7 @@ local Window = OrionLib:MakeWindow({Name = "Wanz Hub", HidePremium = false, Save
 -- Values
 _G.autoCandy = true 
 _G.candyMulti = true
+-G.statMulti = true
 
 -- Function
 
@@ -25,6 +26,18 @@ function candyMulti()
    while _G.candyMulti == true do
      local args = {
     [1] = 2,
+    [2] = "Event"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Upgrade"):InvokeServer(unpack(args))
+wait(0)
+end
+end
+
+function statMulti()
+   while _G.candyMulti == true do
+     local args = {
+    [1] = 1,
     [2] = "Event"
 }
 
@@ -54,6 +67,15 @@ FarmingTab:AddToggle({
 	Callback = function(Value)
 		_G.candyMulti = Value
 		candyMulti()
+	end    
+})
+
+FarmingTab:AddToggle({
+	Name = "Auto Upgrade Event Stat Multiplier",
+	Default = false,
+	Callback = function(Value)
+		_G.statMulti = Value
+		statMulti()
 	end    
 })
 
