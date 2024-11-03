@@ -54,7 +54,7 @@ Time = <number> - The duration of the notfication.
 Tab:AddToggle({
 	Name = "This is a toggle!",
 	Default = false,
-	Callback = function(Value)
+	Callback = function(true)
 		while wait(0) do local args = {
     [1] = 2,
     [2] = "Event"
