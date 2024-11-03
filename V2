@@ -19,6 +19,7 @@ local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = workspace.Main.Candy:GetChildren()[5].CandyCorn.CFrame
 wait(0)
 end
+end
 
 function candyMulti()
    while _G.candyMulti == true do
@@ -28,11 +29,9 @@ function candyMulti()
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Upgrade"):InvokeServer(unpack(args))
- wait(0)
+wait(0)
 end
-
 end
-
 -- Tabs
 FarmingTab = Window:MakeTab({
 	Name = "OP MENU",
