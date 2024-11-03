@@ -1,7 +1,5 @@
-local player = game.Players.LocalPlayer
 if game.PlaceId == 13359942345 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
 local Window = OrionLib:MakeWindow({Name = "Wanz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 -- Values
@@ -19,7 +17,7 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Teleport"):InvokeServer(unpack(args))
 local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = workspace.Main.Candy:GetChildren()[5].CandyCorn.CFrame
-wait(.0000001)
+    wait(.0000001)
 end
 end
 
@@ -74,9 +72,19 @@ FarmingTab:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		_G.candyMulti = Value
-		candyMulti ()
+		candyMulti()
 	end    
 })
+
+
+
+
+
+
+
+
+
+
 
 end
 OrionLib:Init()
