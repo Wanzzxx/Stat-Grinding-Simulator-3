@@ -9,54 +9,24 @@ _G.candyMulti = true
 -- Function
 
 function autoCandy()
-while _G.autoCandy == true do
-local args = {
-    [1] = "Halloween"
-}
+   while _G.autoCandy == true do
+     local args = {
+      [1] = "Halloween"
 
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Teleport"):InvokeServer(unpack(args))
-local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-rootPart.CFrame = workspace.Main.Candy:GetChildren()[5].CandyCorn.CFrame
-    wait(.0000001)
-end
-end
+       game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Teleport"):InvokeServer(unpack(args))
+       local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+       rootPart.CFrame = workspace.Main.Candy:GetChildren()[5].CandyCorn.CFrame
+         wait(.0000001)
+   end
+  end
 
-function candyMulti()
-_G.candyMulti == true
-local args = {
-    [1] = 2,
-    [2] = "Event"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Upgrade"):InvokeServer(unpack(args))'
-end
-
+-- Tabs
 local Tab = Window:MakeTab({
 	Name = "OP MENU",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-local Section = Tab:AddSection({
-	Name = "Auto Collect"
-})
-
---[[
-Name = <string> - The name of the section.
-]]
-
-OrionLib:MakeNotification({
-	Name = "Yokoso",
-	Content = "Watashi no soul society",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-
--- Tabs
-local FarmingTab = Window:MakeTab({
-	Name = "Candy Farm",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
 })
 
 -- Toggles
@@ -68,16 +38,6 @@ FarmingTab:AddToggle({
 		autoCandy()
 	end    
 })
-
-FarmingTab:AddToggle({
-	Name = "Auto Upgrade Candy Multiplier",
-	Default = false,
-	Callback = function(Value)
-		_G.candyMulti = Value
-		candyMulti()
-	end    
-})
-
 
 
 
