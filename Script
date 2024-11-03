@@ -1,3 +1,5 @@
+if game.PlaceId -- 13359942345 then
+
 local player = game.Players.LocalPlayer
 
 local OrionLib =
@@ -52,9 +54,9 @@ Time = <number> - The duration of the notfication.
 ]]
 
 Tab:AddToggle({
-	Name = "This is a toggle!",
+	Name = "Test",
 	Default = false,
-	Callback = function(true)
+	Callback = function()
 		while wait(0) do local args = {
     [1] = 2,
     [2] = "Event"
