@@ -19,8 +19,6 @@ function autoCandy()
    end
   end
 
-}
-
 -- Tabs
 FarmingTab = Window:MakeTab({
 	Name = "OP MENU",
