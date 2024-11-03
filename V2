@@ -1,6 +1,6 @@
 if game.PlaceId == 13359942345 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Wanz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Wanz Hub / [🎃HALLOWEEN!🎃] Stat Grinding Simulator 3 ⬆️", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 -- Values
 _G.autoCandy = true 
