@@ -54,29 +54,23 @@ end
 end
 -- Tabs
 FarmingTab = Window:MakeTab({
-	Name = "Main Game [❌]",
+	Name = "Halloween Event 🎃",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-Tab:AddButton({
+FarmingTab:AddButton({
 	Name = "Claim Achievement 🏆",
 	Callback = function()
       		print("button pressed")
   	end    
 })
 
-Tab:AddButton({
+FarmingTab:AddButton({
 	Name = "Claim Daily 🗓️",
 	Callback = function()
       		print("button pressed")
   	end    
-})
-
-FarmingTab = Window:MakeTab({
-	Name = "Halloween Event 🎃",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
 })
 
 FarmingTab:AddToggle({
