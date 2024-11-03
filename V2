@@ -4,7 +4,6 @@ local Window = OrionLib:MakeWindow({Name = "Wanz Hub", HidePremium = false, Save
 
 -- Values
 _G.autoCandy = true
-_G.candyMulti = true
 
 -- Function
 
@@ -23,7 +22,7 @@ function autoCandy()
 }
 
 -- Tabs
-local Tab = Window:MakeTab({
+FarmingTab = Window:MakeTab({
 	Name = "OP MENU",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
