@@ -5,7 +5,7 @@ local Window = OrionLib:MakeWindow({Name = "Wanz Hub", HidePremium = false, Save
 -- Values
 _G.autoCandy = true 
 _G.candyMulti = true
--G.statMulti = true
+_G.statMulti = true
 
 -- Function
 
