@@ -47,7 +47,7 @@ end
 end
 -- Tabs
 FarmingTab = Window:MakeTab({
-	Name = "OP MENU",
+	Name = "Halloween Event 🎃",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
