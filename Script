@@ -1,11 +1,9 @@
-if game.PlaceId -- 13359942345 then
-
 local player = game.Players.LocalPlayer
-
+if game.PlaceId -- 13359942345 then
 local OrionLib =
  loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Wanz Hub [Stat Grinding Simulator 3]", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Wanz Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 --[[
 Name = <string> - The name of the UI.
@@ -53,10 +51,23 @@ Image = <string> - The icon of the notification.
 Time = <number> - The duration of the notfication.
 ]]
 
-Tab:AddToggle({
+local FarmingTab = Window:MakeTab({
+	Name = "Candy Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+FarmingTab:AddToggle({
 	Name = "Test",
 	Default = false,
-	Callback = function()
+	Callback = function(Value)
+            print(Value)  
 		while wait(0) do local args = {
     [1] = 2,
     [2] = "Event"
