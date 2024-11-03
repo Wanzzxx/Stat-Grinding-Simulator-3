@@ -51,10 +51,11 @@ Image = <string> - The icon of the notification.
 Time = <number> - The duration of the notfication.
 ]]
 
-Tab:AddButton({
-	Name = "Auto Collect Candy & Upgrade Candy Multiplier",
-	Callback = function()
-      		while wait(0) do local args = {
+Tab:AddToggle({
+	Name = "This is a toggle!",
+	Default = false,
+	Callback = function(Value)
+		while wait(0) do local args = {
     [1] = 2,
     [2] = "Event"
 }
@@ -68,8 +69,18 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Telep
 local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = workspace.Main.Candy:GetChildren()[5].CandyCorn.CFrame
 end
-  	end    
+	end    
 })
+
+--[[
+Name = <string> - The name of the toggle.
+Default = <bool> - The default value of the toggle.
+Callback = <function> - The function of the toggle.
+]]
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Teleport"):InvokeServer(unpack(args))
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = workspace.Main.Candy:GetChildren()[5].CandyCorn.CFrame
+end
 
 --[[
 Name = <string> - The name of the button.
