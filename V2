@@ -20,6 +20,8 @@ function autoCandy()
    end
   end
 
+}
+
 -- Tabs
 local Tab = Window:MakeTab({
 	Name = "OP MENU",
@@ -27,9 +29,6 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-})
-
--- Toggles
 FarmingTab:AddToggle({
 	Name = "Auto Collect Candy",
 	Default = false,
