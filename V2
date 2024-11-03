@@ -2,6 +2,13 @@ if game.PlaceId == 13359942345 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Wanz Hub / [🎃HALLOWEEN!🎃] Stat Grinding Simulator 3 ⬆️", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
+OrionLib:MakeNotification({
+	Name = "Yokoso, Watashi No Soul Society",
+	Content = "Yare Yare",
+	Image = "rbxassetid://18539476040",
+	Time = 30
+})
+
 -- Values
 _G.autoCandy = true 
 _G.candyMulti = true
@@ -47,19 +54,33 @@ end
 end
 -- Tabs
 FarmingTab = Window:MakeTab({
+	Name = "Main Game [❌]",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Claim Achievement 🏆",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Claim Daily 🗓️",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+
+FarmingTab = Window:MakeTab({
 	Name = "Halloween Event 🎃",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-FarmingTab = Window:MakeTab({
-	Name = "Main Game [Not Finished]",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
 FarmingTab:AddToggle({
-	Name = "Auto Collect Candy",
+	Name = "Auto Collect Candy 🍬",
 	Default = false,
 	Callback = function(Value)
 		_G.autoCandy = Value
@@ -68,7 +89,7 @@ FarmingTab:AddToggle({
 })
 
 FarmingTab:AddToggle({
-	Name = "Auto Upgrade Candy Multiplier",
+	Name = "Auto Upgrade Candy Multiplier 🎯",
 	Default = false,
 	Callback = function(Value)
 		_G.candyMulti = Value
@@ -77,7 +98,7 @@ FarmingTab:AddToggle({
 })
 
 FarmingTab:AddToggle({
-	Name = "Auto Upgrade Event Stat Multiplier",
+	Name = "Auto Upgrade Event Stat Multiplier 🎯",
 	Default = false,
 	Callback = function(Value)
 		_G.statMulti = Value
