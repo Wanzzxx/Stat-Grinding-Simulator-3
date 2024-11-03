@@ -52,12 +52,14 @@ OrionLib:MakeNotification({
 	Time = 5
 })
 
+-- Tabs
 local FarmingTab = Window:MakeTab({
 	Name = "Candy Farm",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
+-- Toggles
 FarmingTab:AddToggle({
 	Name = "Auto Collect Candy",
 	Default = false,
