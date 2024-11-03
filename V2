@@ -4,6 +4,7 @@ local Window = OrionLib:MakeWindow({Name = "Wanz Hub", HidePremium = false, Save
 
 -- Values
 _G.autoCandy = true 
+_G.candyMulti = true
 
 -- Function
 
@@ -17,9 +18,20 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Telep
 local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
 rootPart.CFrame = workspace.Main.Candy:GetChildren()[5].CandyCorn.CFrame
 wait(0)
+end
+
+function candyMulti()
+   while _G.candyMulti == true do
+     local args = {
+    [1] = 2,
+    [2] = "Event"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Upgrade"):InvokeServer(unpack(args))
+ wait(0)
+end
 
 end
-  end
 
 -- Tabs
 FarmingTab = Window:MakeTab({
@@ -36,4 +48,14 @@ FarmingTab:AddToggle({
 		autoCandy()
 	end    
 })
+
+FarmingTab:AddToggle({
+	Name = "Auto Upgrade Candy Multiplier",
+	Default = false,
+	Callback = function(Value)
+		_G.candyMulti = Value
+		candyMulti()
+	end    
+})
+
 end
