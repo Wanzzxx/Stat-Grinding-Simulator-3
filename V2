@@ -174,7 +174,7 @@ FarmingTab:AddToggle({
 })
 
 FarmingTab:AddToggle({
-	Name = "Auto Collect Candy 🍬",
+	Name = "Auto Collect Candy (Must Enter Halloween First) 🍬",
 	Default = false,
 	Callback = function(Value)
 	    _G.Collect = Value
