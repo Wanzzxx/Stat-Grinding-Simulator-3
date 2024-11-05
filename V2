@@ -23,9 +23,7 @@ function autoCandy()
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Teleport"):InvokeServer(unpack(args))
-local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-rootPart.CFrame = workspace.Main.Candy:GetChildren()[5].CandyCorn.CFrame
-wait(0)
+firetouchinterest(game.Players.LocalPlayer.Character.UpperTorso, workspace.Main.Candy.Halloween.CandyCorn, 0)
 end
 end
 
