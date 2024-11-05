@@ -10,21 +10,26 @@ OrionLib:MakeNotification({
 })
 
 -- Values
-_G.autoCandy = true 
+_G.Teleport = true 
 _G.candyMulti = true
 _G.statMulti = true
+_G.Collect = true
 
 -- Function
 
-function autoCandy()
-   _G.autoCandy == true
+function()
+   _G.Teleport == true
      local args = {
     [1] = "Halloween"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Teleport"):InvokeServer(unpack(args))
 end
-while wait() do firetouchinterest(game.Players.LocalPlayer.Character.UpperTorso, workspace.Main.Candy.Halloween.CandyCorn, 0)
+
+function()
+while _G.Collect == true do
+firetouchinterest(game.Players.LocalPlayer.Character.UpperTorso, workspace.Main.Candy.Halloween.CandyCorn, 0)
+wait()
 end
 
 function candyMulti()
@@ -75,8 +80,8 @@ FarmingTab:AddToggle({
 	Name = "Auto Collect Candy 🍬",
 	Default = false,
 	Callback = function(Value)
-		_G.autoCandy = Value
-		autoCandy()
+		_G.Teleport = Value
+		_G.Collect = Value
 	end    
 })
 
