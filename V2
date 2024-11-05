@@ -1,6 +1,6 @@
 if game.PlaceId == 13359942345 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Wanz Hub / [🎃HALLOWEEN!🎃] Stat Grinding Simulator 3 ⬆️", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Waizen Hub / [Best Script] Stat Grinding Simulator 3 ⬆️", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Waizen Hub", IntroIcon = "rbxassetid://18539476040"})
 
 OrionLib:MakeNotification({
 	Name = "Yokoso, Watashi No Soul Society",
@@ -14,13 +14,116 @@ _G.Teleport = true
 _G.candyMulti = true
 _G.statMulti = true
 _G.Collect = true
+_G.Achievement = true
 
 -- Function
+
+function Achievement()
+while _G.Achievement == true do
+local args = {
+    [1] = 1,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 2,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 3,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 4,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 5,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 6,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 7,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 8,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 9,
+    [2] = "AllTime"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 1,
+    [2] = "Daily"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 2,
+    [2] = "Daily"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 3,
+    [2] = "Daily"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 4,
+    [2] = "Daily"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 1,
+    [2] = "Weekly"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 2,
+    [2] = "Weekly"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+
+local args = {
+    [1] = 3,
+    [2] = "Weekly"
+}
+game:GetService("ReplicatedStorage").Remotes.Achievement:FireServer(unpack(args))
+wait()
+end
+end
 
 function Collect()
 while _G.Collect == true do
 firetouchinterest(game.Players.LocalPlayer.Character.UpperTorso, workspace.Main.Candy.Halloween.CandyCorn, 0)
 wait()
+end
 end
 
 function candyMulti()
@@ -53,12 +156,6 @@ FarmingTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-FarmingTab:AddButton({
-	Name = "Claim Achievement 🏆",
-	Callback = function()
-      		print("button pressed")
-  	end    
-})
 
 FarmingTab:AddButton({
 	Name = "Claim Daily 🗓️",
@@ -68,11 +165,20 @@ FarmingTab:AddButton({
 })
 
 FarmingTab:AddToggle({
+	Name = "Auto Collect Achievement 🏆",
+	Default = false,
+	Callback = function(Value)
+	    _G.Achievement = Value
+         Achievement()
+	end    
+})
+
+FarmingTab:AddToggle({
 	Name = "Auto Collect Candy 🍬",
 	Default = false,
 	Callback = function(Value)
-		_G.Collect = Value
-                Collect()
+	    _G.Collect = Value
+         Collect()
 	end    
 })
 
