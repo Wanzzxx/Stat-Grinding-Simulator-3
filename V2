@@ -17,7 +17,7 @@ _G.Collect = true
 
 -- Function
 
-function()
+function Teleport()
    _G.Teleport == true
      local args = {
     [1] = "Halloween"
@@ -26,7 +26,7 @@ function()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Teleport"):InvokeServer(unpack(args))
 end
 
-function()
+function Collect()
 while _G.Collect == true do
 firetouchinterest(game.Players.LocalPlayer.Character.UpperTorso, workspace.Main.Candy.Halloween.CandyCorn, 0)
 wait()
@@ -82,6 +82,8 @@ FarmingTab:AddToggle({
 	Callback = function(Value)
 		_G.Teleport = Value
 		_G.Collect = Value
+                Teleport()
+                Collect()
 	end    
 })
 
