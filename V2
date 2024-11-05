@@ -17,13 +17,13 @@ _G.statMulti = true
 -- Function
 
 function autoCandy()
-   while _G.autoCandy == true do
+   _G.autoCandy == true
      local args = {
     [1] = "Halloween"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Teleport"):InvokeServer(unpack(args))
-firetouchinterest(game.Players.LocalPlayer.Character.UpperTorso, workspace.Main.Candy.Halloween.CandyCorn, 0)
+while wait() do firetouchinterest(game.Players.LocalPlayer.Character.UpperTorso, workspace.Main.Candy.Halloween.CandyCorn, 0)
 end
 end
 
